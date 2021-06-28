@@ -1,11 +1,10 @@
-function notFound(req, res, next) {
-  res.status(404);
-  const error = new Error(`🔍 - Not Found - ${req.originalUrl}`);
-  next(error);
+/* eslint-disable no-unused-vars */
+const notFound = (req, res, next) => {
+  res.redirect(`/api/${process.env.API_VERSION}`)
 }
 
 /* eslint-disable no-unused-vars */
-function errorHandler(err, req, res, next) {
+const errorHandler = (err, req, res, next) => {
   /* eslint-enable no-unused-vars */
   const statusCode = res.statusCode !== 200 ? res.statusCode : 500;
   res.status(statusCode);
@@ -15,7 +14,7 @@ function errorHandler(err, req, res, next) {
   });
 }
 
-module.exports = {
+export default {
   notFound,
   errorHandler
-};
+}

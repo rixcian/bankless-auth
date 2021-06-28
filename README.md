@@ -1,4 +1,4 @@
-# Express API Starter
+# Express API Starter with Typescript
 
 Includes API Server utilities:
 
