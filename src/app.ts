@@ -3,6 +3,7 @@ import morgan from "morgan";
 import helmet from "helmet";
 import dotenv from "dotenv";
 import express from 'express';
+import passport from "passport";
 import {RequestContext} from "@mikro-orm/core";
 
 // LOAD ENVS
@@ -27,10 +28,11 @@ app.use(morgan(MORGAN_FORMAT));
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
+app.use(passport.initialize());
 app.use(async (req, res, next) => {
   const orm = await connectToDb();
   RequestContext.create(orm.em, next);
-})
+});
 
 // SETUP API ROUTES
 app.use(`/api/${API_VERSION}`, api);
