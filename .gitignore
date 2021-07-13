@@ -72,5 +72,8 @@ typings/
 # Serverless directories
 .serverless
 
+# Jetbrains products
+.idea
+
 # Dist
 dist

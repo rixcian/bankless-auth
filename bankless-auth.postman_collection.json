@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "db46265b-c444-49c8-b1b9-ee805afdcf17",
+		"name": "bankless_auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login_email",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"test@gmail.com\",\n  \"password\": \"Testovani2\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/users/login/email",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"login",
+						"email"
+					]
+				},
+				"description": "User login by email & password"
+			},
+			"response": []
+		},
+		{
+			"name": "login_web3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"signedMessage\": \"0x3b1a894b378589eae1090b6877c2a51baf347fe0d8d5e34050679b8ac47f63d91b0c92c3885363abd8a6c6c854ac84fafa6e0f4bfdd16079730faa293ee6a79d1c\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/users/login/web3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"login",
+						"web3"
+					]
+				},
+				"description": "User login by email & password"
+			},
+			"response": []
+		},
+		{
+			"name": "register_email",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"test\",\n  \"email\": \"test@gmail.com\",\n  \"password\": \"Testovani2\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/users/register/email",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"register",
+						"email"
+					]
+				},
+				"description": "User login by email & password"
+			},
+			"response": []
+		},
+		{
+			"name": "token_check",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwid2ViM0FkZHJlc3MiOm51bGwsImlhdCI6MTYyNTA1MTAyOSwiZXhwIjoxNjI1NjU1ODI5fQ.5vpeIn-0Yhy3W6n9b3P2VsQ_e3DIPYLoceXLwaMqB-I",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/users/private",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"private"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "set_username",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOm51bGwsImVtYWlsIjpudWxsLCJ3ZWIzQWRkcmVzcyI6IjB4OWJlZDQyYmNjZGE5ZjAyZjdmMzRlZjcwNGE0NDhlOWNmZmQ1NDRhNSIsImlhdCI6MTYyNTA1NDgwNywiZXhwIjoxNjI1NjU5NjA3fQ.fPg5LVPqX1jYjydd-PryXt_FMNYcj0YcE4bPIejwggU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"rixcian\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/users/username",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"username"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

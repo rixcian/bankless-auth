@@ -1,7 +1,7 @@
 {
-  "name": "typescript-api-starter",
+  "name": "bankless-auth",
   "version": "1.0.0",
-  "description": "A basic starter for an Express.js API with help of Typescript",
+  "description": "Authentication & authorization REST API for bankless.cz",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
